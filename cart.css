@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  section{
+  height: 10vh;
+  }
+  section::before{ 
+  content: "";
+  position: fixed; 
+  background-image: url(../images/backg.jpg);
+  height: 745px;
+  top:0px;
+  left:0px;
+  width: 100%;
+  z-index: -1;
+  opacity:0.5;
+  }
+  section .logo ul li{
+    display: inline;
+    flex-direction: column;
+    list-style: none;
+  }
+  section .logo ul table .logo1 li a img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 120px;
+    border: none;
+    border-width: 3px;
+    width: 300px;
+  }
+  section .logo ul table .book li a h1{
+    font-size: 35px;
+    padding-left: 0;
+    padding: 25px;
+    margin: 10px ;
+    align-content: center;
+    text-align: center;
+  }
+  section .logo ul table .book{
+    width: 1500px;
+  }
+  section .logo ul table .logo1{
+    width: 300px;
+  }
+  section .bar ul table li{
+    list-style: none;
+    display: inline;
+    flex-direction: column;
+    border-width: 1px;
+    border-collapse: collapse;
+  } 
+  section .bar ul table li a{
+    font-size: 27px;
+    padding: 70px;
+    margin: 36px;
+    text-decoration: none;
+  }
+  .Cart {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    border: none;
+  }
+  
+ .Cart table {
+    padding-top: 200px;
+    padding-left:450px;
+
+    border-collapse: separate;
+    border: none;
+
+    font-size: 37px;
+    text-align: center;
+
+    display: block;
+  }

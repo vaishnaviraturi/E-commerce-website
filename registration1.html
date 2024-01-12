@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation in HTML | CodingNepal</title>
+    <link rel="stylesheet" href="../css/registration1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  </head>
+  <body>
+    <form name="myform" method="post" action="\myaction.php" onsubmit= "return validation()">
+      <h2>Registration Form</h2>
+      <div class="form-group username">
+        <label for="username">User Name</label>
+        <input type="text" name="username" placeholder="Enter user name"><br>
+        <p id="userError" class="error"></p>
+      </div>
+      <div class="form-group password">
+        <label for="password">Password</label>
+        <input type="password"  name="password" placeholder="Enter your password">
+        <i id="pass-toggle-btn" class="fa-solid fa-eye"></i><br>
+        <p id="passError" class="error"></p>
+      </div>
+      <div class="form-group email">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" placeholder="Enter your email address"><br>
+        <p id="emailError" class="error"></p>
+      </div>
+      <div class="form-group email">
+        <label for="phone">Phone number</label>
+        <input type="text" name="phone" placeholder="Enter your Phone no"><br>
+        <p id="phoneError" class="error"></p>
+      </div>
+      <div class="form-group gender">
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="" selected disabled>Select your gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group date">
+        <label for="date">Birth Date</label>
+        <input type="date" id="date" placeholder="Select your date">
+      </div>
+      <div class="form-group languages">
+        <label for="languages"></label>
+        <label for="languages">Languages</label>
+        <select id="languages">
+          <option value="" selected disabled>Select the language</option>
+          <option value="English">English</option>
+          <option value="Telugu">Telugu</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Tamil">Tamil</option>
+        </select>
+      </div>
+      <div class="form-group address">
+        <label for="date">Address</label>
+        <textarea></textarea>
+      </div>
+      <div class="form-group submit-btn">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>
+<script>
+    function validation()
+    {
+        var name=document.forms["myform"]["username"].value;
+        var email=document.forms["myform"]["email"].value;
+        var password = document.forms["myform"]["password"].value;
+        var phone=document.forms["myform"]["phone"].value;
+        if (name == null || name == "") {
+        alert("Username is empty.");
+        return false;
+      }
+      else if(name.length<6)
+      {
+          alert("Username contain more than 5 alphabets.");
+            return false;
+      }
+      else{
+        for( i=0;i<name.length;i++)
+    {
+         k=name[i];
+        var ascii=k.charCodeAt(0);
+        if((ascii>=65 && ascii<=90) || (ascii>=97 && ascii<=122))
+        {
+        }
+        else{
+          alert("Include alphabets only.");
+          return false;
+        }
+    }
+  }
+  if (email == null || email == "") {
+    alert("Email can't be blank.");
+    return false;
+  }
+  else{
+    var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+         if(email.match(mailformat))
+         {
+         }
+         else{
+          alert("Invalid email address!");
+            return false;
+         }
+  }
+  if (password.length < 6) {
+    alert("Password should contains more than 5 letters");
+    return false;
+  }
+  if(phone.length<10 || phone.length>10)
+  {
+   alert("Phone number is not valid");
+   return false;
+  }
+  return true;
+}
+</script>
